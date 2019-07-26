@@ -1,0 +1,37 @@
+{
+  "name": "mssqldocker-master",
+  "version": "1.0.0",
+  "description": "* Build a docker image based on mcr.microsoft.com/mssql/server * Configure the database with a database and user",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test npx nyc --reporter=html npx mocha --exit --no-deprecation --require esm src/tests/**"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "factory-girl": "^5.0.4",
+    "faker": "^4.1.0",
+    "nyc": "^14.1.1",
+    "sinon": "^7.3.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "nyc": {
+    "check-coverage": false,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/index.js",
+      "src/config/**",
+      "src/logs/**",
+      "src/tests/**",
+      "src/examples/**"
+    ],
+    "all": false
+  }
+}

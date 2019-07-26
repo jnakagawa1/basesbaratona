@@ -1,0 +1,9 @@
+node_modules
+.history
+.env
+docker-compose.yml
+.idea
+keys/*
+.vscode
+coverage
+.nyc_output

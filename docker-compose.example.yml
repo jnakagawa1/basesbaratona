@@ -1,0 +1,30 @@
+version: '3.2'
+
+services:
+  db:
+    build: .
+    image: mcmoe/mssqldocker:v2017.CU12.1
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: 2astazeY
+      MSSQL_DB: autorizador
+      MSSQL_USER: jean
+      MSSQL_PASSWORD: b@r@ton@1
+      SQL_DB: BENEFITDEV
+    ports:
+      - "1433:1433"
+    container_name: mssql
+
+  jean:
+    build: .
+    image: mcmoe/mssqldocker:v2017.CU12.1
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: 2astazeY
+      MSSQL_DB: netcardpj
+      MSSQL_USER: luan
+      MSSQL_PASSWORD: b@r@ton@2
+      SQL_DB: DBSERVERDEV
+    ports:
+      - "1434:1433"
+    container_name: mssql2
